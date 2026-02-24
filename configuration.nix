@@ -25,6 +25,12 @@ boot.loader = {
   };
 };
 
+  #use-unfree
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
