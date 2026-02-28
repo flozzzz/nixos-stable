@@ -4,13 +4,34 @@
 
 { config, lib, pkgs, ... }:
 
+#sddm-theme
+let
+  hyprlandKathTheme = pkgs.stdenv.mkDerivation {
+    name = "sddm-hyprland-kath";
+    src = "${pkgs.sddm-astronaut}";
+    buildInputs = [ pkgs.gnumake pkgs.coreutils ]; # необязательно, но безопасно
+    installPhase = ''
+      mkdir -p $out/share/sddm/themes/sddm-hyprland-kath
+      cp -r ${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme/* \
+            $out/share/sddm/themes/sddm-hyprland-kath/
+      substituteInPlace $out/share/sddm/themes/sddm-hyprland-kath/metadata.desktop \
+        --replace "ConfigFile=Themes/astronaut.conf" "ConfigFile=Themes/hyprland_kath.conf"
+      substituteInPlace $out/share/sddm/themes/sddm-hyprland-kath/metadata.desktop \
+        --replace "Theme-Id=sddm-astronaut-theme" "Theme-Id=sddm-hyprland-kath"
+      chmod -R a+r $out/share/sddm/themes/sddm-hyprland-kath
+    '';
+  };
+in
+
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+
 #nftables
 networking.nftables.enable = true;
+
 #boot-grub
 boot.loader = {
   efi = {
@@ -39,7 +60,7 @@ boot.loader = {
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
-#auto-mount
+
 services.udisks2.enable = true;
 security.polkit.enable = true;
 services.gvfs.enable = true;
@@ -72,9 +93,18 @@ services.gvfs.enable = true;
   services.xserver = {
    enable = true;
    };
+
 #sddm
-   services.displayManager.sddm = {
-     enable = true;
+services.displayManager.sddm = {
+  enable = true;
+  theme = "sddm-hyprland-kath";
+  extraPackages = [
+      hyprlandKathTheme
+      pkgs.qt6.qtmultimedia
+      pkgs.qt6.qtmultimedia
+      pkgs.qt6.qtbase
+      pkgs.qt6.qtdeclarative
+    ];
 };
 
 #hyprland
@@ -170,6 +200,8 @@ services.gvfs.enable = true;
   pkgs.ffmpeg-full
   pkgs.mpv
   pkgs.qbittorrent
+  hyprlandKathTheme
+  polkit_gnome
 ];
  
 #fonts
@@ -177,8 +209,8 @@ fonts = {
    packages = with pkgs; [
     corefonts
     liberation_ttf
-    vista-fonts             # Calibri, Cambria, Consolas, Segoe UI (частично)
-    liberation_ttf         # хорошая замена виндовым
+    vista-fonts         
+    liberation_ttf    
     dejavu_fonts
     inter
     roboto
