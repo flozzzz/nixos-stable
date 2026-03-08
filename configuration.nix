@@ -29,7 +29,8 @@ in
       ./hardware-configuration.nix
     ];
 
-#nftables
+#nftables-and-firewall
+networking.firewall.enable = true;
 networking.nftables.enable = true;
 
 #boot-grub
@@ -37,7 +38,6 @@ boot.loader = {
   efi = {
     canTouchEfiVariables = true;
   };
-
   grub = {
     enable = true;
     efiSupport = true;
@@ -46,11 +46,7 @@ boot.loader = {
   };
 };
 
-  #use-unfree
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
+nix.settings.sandbox = true;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -60,16 +56,20 @@ boot.loader = {
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
-
 services.udisks2.enable = true;
 security.polkit.enable = true;
 services.gvfs.enable = true;
-
-  # Set your time zone.
+  
+# Set your time zone.
   time.timeZone = "Europe/Moscow";
 
   #on flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  #use-unfree
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
   
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -174,6 +174,7 @@ services.displayManager.sddm = {
   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 };
+
  programs.fish.enable = true;
   environment.systemPackages = with pkgs; [
   vim
@@ -200,8 +201,11 @@ services.displayManager.sddm = {
   pkgs.ffmpeg-full
   pkgs.mpv
   pkgs.qbittorrent
+  pkgs.lazarus
   hyprlandKathTheme
   polkit_gnome
+  vscode
+  obs-studio
 ];
  
 #fonts
@@ -209,8 +213,8 @@ fonts = {
    packages = with pkgs; [
     corefonts
     liberation_ttf
-    vista-fonts         
-    liberation_ttf    
+    vista-fonts           
+    liberation_ttf   
     dejavu_fonts
     inter
     roboto
@@ -293,4 +297,3 @@ fonts = {
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
-# test change
