@@ -2,6 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+  gvfs
+  mtpfs
+  jmtpfs
   vim
   sl
   wget
