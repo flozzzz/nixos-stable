@@ -17,6 +17,11 @@
 networking.firewall.enable = true;
 networking.nftables.enable = true;
 
+#vless
+services.v2raya.enable = true;
+services.v2raya.cliPackage = pkgs.xray;
+
+
 #boot-grub
 boot.loader = {
   efi = {
