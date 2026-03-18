@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+  sptlrx
   gvfs
   mtpfs
   jmtpfs
