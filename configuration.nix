@@ -20,7 +20,7 @@ networking.nftables.enable = true;
 #vless
 services.v2raya.enable = true;
 services.v2raya.cliPackage = pkgs.xray;
-
+networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
 #boot-grub
 boot.loader = {
