@@ -50,7 +50,12 @@ security.polkit.enable = true;
 services.gvfs.enable = true;
 
 
-  
+#virtual-machine
+programs.virt-manager.enable = true;
+users.groups.libvirtd.members = ["flozz"];
+virtualisation.libvirtd.enable = true;
+virtualisation.spiceUSBRedirection.enable = true;  
+
 # Set your time zone.
   time.timeZone = "Europe/Moscow";
 
