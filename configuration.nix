@@ -41,6 +41,7 @@ nix.settings.sandbox = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
   networking.hostName = "flozz-nixos"; # Define your hostname.
+  boot.kernelModules = [ "kvm-intel" ];
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -53,8 +54,14 @@ services.gvfs.enable = true;
 #virtual-machine
 programs.virt-manager.enable = true;
 users.groups.libvirtd.members = ["flozz"];
-virtualisation.libvirtd.enable = true;
 virtualisation.spiceUSBRedirection.enable = true;  
+virtualisation.libvirtd = {
+  enable = true;
+  qemu = {
+    package = pkgs.qemu_kvm;
+    runAsRoot = true;
+  };
+};
 
 # Set your time zone.
   time.timeZone = "Europe/Moscow";
@@ -140,7 +147,7 @@ services.blueman.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.flozz = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "audio" "video"]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "audio" "video" "libvirtd"]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
        tree
      ];
