@@ -32,8 +32,8 @@
   qbittorrent
   lazarus
   polkit_gnome
-  vscode
   obs-studio
+  wine
  ];
 
 }
