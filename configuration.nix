@@ -12,7 +12,6 @@
       ./modules/pkgs.nix
       ./modules/fonts.nix
     ];
-
 #nftables-and-firewall
 networking.firewall.enable = true;
 networking.nftables.enable = true;
@@ -60,6 +59,7 @@ virtualisation.libvirtd = {
   qemu = {
     package = pkgs.qemu_kvm;
     runAsRoot = true;
+    vhostUserPackages = [ pkgs.virtiofsd ];
   };
 };
 

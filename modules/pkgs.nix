@@ -33,7 +33,13 @@
   lazarus
   polkit_gnome
   obs-studio
-  wine
+  wineWow64Packages.stable
+  winetricks
+  virtiofsd
+  zip
+  wl-clipboard
+  cliphist
+  rofi
  ];
 
 }
