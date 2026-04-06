@@ -1,6 +1,19 @@
 { config, pkgs, lib, ... }:
 
 {
+    #use-unfree
+    nixpkgs.config = {
+    allowUnfree = true;
+  };
+
+ programs.firefox.enable = true;
+ programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; 
+  dedicatedServer.openFirewall = true;
+};
+ programs.fish.enable = true;
+
   environment.systemPackages = with pkgs; [
   sptlrx
   gvfs
