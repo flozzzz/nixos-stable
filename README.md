@@ -1,4 +1,4 @@
-````md
+md
 # NixOS Config
 
 This is my personal NixOS configuration.
