@@ -1,4 +1,4 @@
-![preview](./preview.png)
+![preview](./preview.jpg)
 # NixOS Config
 
 This is my personal NixOS configuration.
