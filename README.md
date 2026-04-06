@@ -45,18 +45,6 @@ sudo mv /etc/nixos.backup /etc/nixos
 
 ---
 
-## Updating
-
-To update the configuration:
-
-```bash
-cd /etc/nixos
-git pull
-sudo nixos-rebuild switch --flake .#flozz-nixos
-```
-
----
-
 ## Structure
 
 * `configuration.nix` — main system config
@@ -69,5 +57,3 @@ sudo nixos-rebuild switch --flake .#flozz-nixos
 ## Disclaimer
 
 This repository is tailored for my own setup, so some parts may need adjustment before using it on another machine.
-
-```
