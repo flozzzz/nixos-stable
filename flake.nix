@@ -15,9 +15,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    dolphin-overlay.url = "github:rumboon/dolphin-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, caelestia-shell, spicetify-nix, ... }:
+  outputs = { self, nixpkgs, home-manager, caelestia-shell, spicetify-nix, dolphin-overlay, ... }:
   let
     system = "x86_64-linux";
     spicePkgs = spicetify-nix.legacyPackages.${system};
@@ -32,6 +34,10 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.flozz = import ./home-manager/home.nix;
+        }
+
+        {
+          nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
         }
 
         ({ pkgs, ... }: {
