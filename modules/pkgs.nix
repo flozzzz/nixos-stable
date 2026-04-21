@@ -5,7 +5,7 @@
     nixpkgs.config = {
     allowUnfree = true;
   };
-
+ services.usbmuxd.enable = true;
  programs.firefox.enable = true;
  programs.steam = {
   enable = true;
@@ -15,6 +15,9 @@
  programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
+  usbutils
+  usbmuxd
+  libimobiledevice
   sptlrx
   gvfs
   mtpfs

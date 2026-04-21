@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, ... }:
 
 {
@@ -10,11 +6,12 @@
       ./hardware-configuration.nix
       ./modules/main.nix
     ];
+programs.niri.enable = true;
 
 networking.hostName = "flozz-nixos"; # Define your hostname.
 
 
-# Set your time zone.
+  # Set your time zone.
   time.timeZone = "Europe/Moscow";
 
   
@@ -31,8 +28,8 @@ networking.hostName = "flozz-nixos"; # Define your hostname.
      ];
    };
   
-  nix.settings.sandbox = true;
 
+  nix.settings.sandbox = true;
   services.udisks2.enable = true;
   security.polkit.enable = true;
   services.gvfs.enable = true;
