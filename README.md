@@ -50,7 +50,7 @@ sudo mv /etc/nixos.backup /etc/nixos
 * `configuration.nix` — main system config
 * `hardware-configuration.nix` — hardware-specific settings
 * `modules/` — system modules
-* `home-manager/` — Home Manager configs and user modules
+* `home-manager/` — Home Manager and user modules
 
 ---
 
