@@ -33,7 +33,8 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.flozz = import ./home-manager/home.nix;
+          home-manager.backupFileExtension = "backup";
+	  home-manager.users.flozz = import ./home-manager/home.nix;
         }
 
         {

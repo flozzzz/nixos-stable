@@ -30,9 +30,9 @@
             "scale": 1
         },
         "transparency": {
-            "base": 0.052839176829268295,
+            "base": 0.25,
             "enabled": true,
-            "layers": 0.024742759146341463
+            "layers": 0.5
         }
     },
     "background": {
