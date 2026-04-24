@@ -10,6 +10,7 @@
   ./modules/btop.nix
   ./modules/hypr.nix
   ./modules/caelestia.nix
+  ./modules/fish.nix
   ];
 
   home.username = "flozz";
