@@ -14,10 +14,7 @@ It includes:
 
 ## Installation
 
-### Fresh install or existing system
-
 ```bash
-cd /etc/nixos
 sudo mv /etc/nixos /etc/nixos.backup
 sudo git clone https://github.com/flozzzz/nixos-stable /etc/nixos
 cd /etc/nixos
