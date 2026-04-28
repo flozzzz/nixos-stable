@@ -11,6 +11,7 @@
   ./modules/hypr.nix
   ./modules/caelestia.nix
   ./modules/fish.nix
+  ./modules/nvim.nix
   ];
 
   home.username = "flozz";
