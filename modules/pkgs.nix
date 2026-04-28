@@ -26,6 +26,9 @@
     rsync
     ncdu
     usbutils
+    kdePackages.kio
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
 
     # Device / phone / filesystem helpers
     usbmuxd
@@ -61,6 +64,9 @@
     wayland-protocols
     kdePackages.dolphin
     polkit_gnome
+    kdePackages.qtsvg
+    kdePackages.breeze
+    qt6Packages.qt6ct
 
     # Media / internet / apps
     telegram-desktop

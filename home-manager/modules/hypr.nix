@@ -45,7 +45,8 @@ exec-once = wl-paste --watch cliphist store
 
 env = XCURSOR_SIZE,20
 env = HYPRCURSOR_SIZE,20
-
+env = QT_QPA_PLATFORMTHEME,qt6ct
+env = QT_QPA_PLATFORM,wayland
 
 ###################
 ### PERMISSIONS ###
