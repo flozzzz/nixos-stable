@@ -8,6 +8,7 @@
 
 # See https://wiki.hypr.land/Configuring/Monitors/
 monitor = eDP-1,preferred,auto,1
+monitor = , preferred, auto, 1, mirror, eDP-1
 xwayland {
         force_zero_scaling = true
 }
