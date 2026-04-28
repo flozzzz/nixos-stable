@@ -12,5 +12,6 @@
     ./sound.nix    
     ./xserver.nix
     ./virt-manager.nix
+    ./hardware.nix
   ];
 }
