@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
       ./modules/main.nix
     ];
-programs.niri.enable = true;
 
 networking.hostName = "flozz-nixos"; # Define your hostname.
 
