@@ -7,7 +7,7 @@
       ./modules/main.nix
     ];
 
-networking.hostName = "flozz-nixos"; # Define your hostname.
+networking.hostName = "nixos"; # Define your hostname.
 
 
   # Set your time zone.
