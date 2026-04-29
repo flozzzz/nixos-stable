@@ -55,3 +55,8 @@ sudo mv /etc/nixos.backup /etc/nixos
 ## Disclaimer
 
 This repository is tailored for my own setup, so some parts may need adjustment before using it on another machine.
+
+## Credits
+
+- Neovim configuration is taken from [Andrey0189's nvim-config](https://github.com/Andrey0189/nvim-config).
+- Thanks to the NixOS community and authors of public dotfiles for ideas, snippets, and inspiration.
