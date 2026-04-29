@@ -1,24 +1,29 @@
 {
   description = "A very basic flake";
-
+  
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    
-    dolphin-overlay.url = "github:rumboon/dolphin-overlay";
+  caelestia-shell = {
+    url = "github:caelestia-dots/shell";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
 
+  spicetify-nix = {
+    url = "github:Gerg-L/spicetify-nix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  home-manager = {
+    url = "github:nix-community/home-manager/release-25.11";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  dolphin-overlay = {
+    url = "github:rumboon/dolphin-overlay";
+  };
+};
+ 
   outputs = { self, nixpkgs, home-manager, caelestia-shell, spicetify-nix, dolphin-overlay, ... }:
   let
     system = "x86_64-linux";
