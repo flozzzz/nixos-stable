@@ -16,7 +16,6 @@
       ripgrep
       fd
       tree-sitter
-      # если нужен Python LSP, попробуй сначала так:
       python3Packages.python-lsp-server
     ];
   };
