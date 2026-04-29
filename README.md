@@ -17,9 +17,10 @@ It includes:
 ```bash
 sudo mv /etc/nixos /etc/nixos.backup
 sudo git clone https://github.com/flozzzz/nixos-stable /etc/nixos
+sudo cp /etc/nixos.backup/hardware-configuration.nix /etc/nixos/
 cd /etc/nixos
 sudo nixos-rebuild switch --flake .#flozz-nixos
-````
+```
 
 > Replace `flozz-nixos` with your system hostname if needed.
 
