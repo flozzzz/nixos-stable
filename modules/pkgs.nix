@@ -75,6 +75,7 @@
     mpv
     qbittorrent
     obs-studio
+    kdePackages.gwenview
 
     # Wine / Windows compatibility
     wineWow64Packages.stable
