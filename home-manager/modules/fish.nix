@@ -15,13 +15,14 @@
     };
 
     shellInit = ''
-      # Добавляем путь для spicetify
       fish_add_path $HOME/.spicetify
     '';
 
     interactiveShellInit = ''
-      set -g fish_greeting # Отключаем приветствие
-      
+      set -g fish_greeting 
+      set -U fish_color_autosuggestion 555
+      set -U fish_color_cwd green
+      set -U fish_color_valid_path normal
       ${pkgs.fastfetch}/bin/fastfetch
     '';
 
