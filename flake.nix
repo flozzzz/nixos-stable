@@ -3,10 +3,11 @@
   
   inputs = {
   nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+  nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
   caelestia-shell = {
     url = "github:caelestia-dots/shell";
-    inputs.nixpkgs.follows = "nixpkgs";
+    inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   spicetify-nix = {
