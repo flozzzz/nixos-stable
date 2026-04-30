@@ -49,7 +49,6 @@
     btop
     fastfetch
     cava
-    sptlrx
     pipes-rs
     sl
     nyancat
@@ -67,7 +66,7 @@
     kdePackages.qtsvg
     kdePackages.breeze
     qt6Packages.qt6ct
-
+    
     # Media / internet / apps
     telegram-desktop
     libreoffice-qt
