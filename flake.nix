@@ -8,6 +8,7 @@
   caelestia-shell = {
     url = "github:caelestia-dots/shell";
     inputs.nixpkgs.follows = "nixpkgs-unstable";
+    inputs.quickshell.follows = "quickshell";
   };
 
   spicetify-nix = {
@@ -15,6 +16,11 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
+  quickshell = {
+    url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    inputs.nixpkgs.follows = "nixpkgs-unstable";
+  };
+  
   home-manager = {
     url = "github:nix-community/home-manager/release-25.11";
     inputs.nixpkgs.follows = "nixpkgs";
@@ -25,10 +31,11 @@
   };
 };
  
-  outputs = { self, nixpkgs, home-manager, caelestia-shell, spicetify-nix, dolphin-overlay, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, quickshell, home-manager, caelestia-shell, spicetify-nix, dolphin-overlay, ... }:
   let
     system = "x86_64-linux";
     spicePkgs = spicetify-nix.legacyPackages.${system};
+    qsPkg = quickshell.packages.${system}.default;
   in {
     nixosConfigurations.flozz-nixos = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -51,6 +58,7 @@
           nixpkgs.config.allowUnfree = true;
           environment.systemPackages = [
             caelestia-shell.packages.${system}.with-cli
+	    qsPkg
           ];
 
           imports = [
