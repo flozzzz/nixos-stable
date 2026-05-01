@@ -56,7 +56,6 @@
 
     # Desktop / Wayland / shell
     kitty
-    quickshell
     rofi
     wl-clipboard
     cliphist
