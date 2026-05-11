@@ -29,6 +29,7 @@
     kdePackages.kio
     kdePackages.kio-fuse
     kdePackages.kio-extras
+    unrar
 
     # Device / phone / filesystem helpers
     usbmuxd
@@ -74,6 +75,8 @@
     qbittorrent
     obs-studio
     kdePackages.gwenview
+    scanmem
+    krita
 
     # Wine / Windows compatibility
     wineWow64Packages.stable
