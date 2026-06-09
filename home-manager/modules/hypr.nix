@@ -162,7 +162,6 @@ animations {
 
 # See https://wiki.hypr.land/Configuring/Dwindle-Layout/ for more
 dwindle {
-    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
     preserve_split = true # You probably want this
 }
 
@@ -225,7 +224,6 @@ bind = $mainMod, E, exec, $fileManager
 bind = $mainMod, Y, togglefloating,
 bind = $mainMod, R, exec, $menu
 bind = $mainMod, P, pseudo, # dwindle
-bind = $mainMod, J, togglesplit, # dwindle
 # Clipboard and emoji picker
 bind = Super, V, exec, pkill fuzzel || caelestia clipboard
 bind = Super+Alt, V, exec, pkill fuzzel || caelestia clipboard -d

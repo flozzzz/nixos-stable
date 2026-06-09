@@ -2,7 +2,7 @@
   description = "A very basic flake";
   
   inputs = {
-  nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+  nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
   nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
   caelestia-shell = {
@@ -22,16 +22,13 @@
   };
   
   home-manager = {
-    url = "github:nix-community/home-manager/release-25.11";
+    url = "github:nix-community/home-manager/release-26.05";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  dolphin-overlay = {
-    url = "github:rumboon/dolphin-overlay";
-  };
 };
  
-  outputs = { self, nixpkgs, nixpkgs-unstable, quickshell, home-manager, caelestia-shell, spicetify-nix, dolphin-overlay, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, quickshell, home-manager, caelestia-shell, spicetify-nix, ... }:
   let
     system = "x86_64-linux";
     spicePkgs = spicetify-nix.legacyPackages.${system};
@@ -48,10 +45,6 @@
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
 	  home-manager.users.flozz = import ./home-manager/home.nix;
-        }
-
-        {
-          nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
         }
 
         ({ pkgs, ... }: {

@@ -40,7 +40,10 @@
     virtiofsd
 
     # Development / programming
+    docker
     python3
+    python313Packages.nextcord
+    python313Packages.pip
     gcc
     neovim
     vim

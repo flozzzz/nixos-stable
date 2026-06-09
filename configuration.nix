@@ -21,7 +21,7 @@ networking.hostName = "nixos"; # Define your hostname.
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.flozz = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "audio" "video" "libvirtd"];
+     extraGroups = [ "wheel" "audio" "video" "libvirtd" "docker"];
      packages = with pkgs; [
        tree
      ];
