@@ -28,15 +28,20 @@
 
 };
  
-  outputs = { self, nixpkgs, nixpkgs-unstable, quickshell, home-manager, caelestia-shell, spicetify-nix, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, quickshell, home-manager, caelestia-shell, spicetify-nix, ... }@inputs:
   let
     system = "x86_64-linux";
     spicePkgs = spicetify-nix.legacyPackages.${system};
     qsPkg = quickshell.packages.${system}.default;
+    pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+	config.allowUnfree = true;
+    };
   in {
     nixosConfigurations.flozz-nixos = nixpkgs.lib.nixosSystem {
       inherit system;
-      modules = [
+       specialArgs = { inherit pkgs-unstable inputs; };
+       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
 

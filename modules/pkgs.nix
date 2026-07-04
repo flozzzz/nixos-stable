@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, pkgs-unstable, ... }:
 
 {
   # Allow unfree packages
@@ -81,5 +81,7 @@
     # Wine / Windows compatibility
     wineWow64Packages.stable
     winetricks
+  ] ++ [
+    pkgs-unstable.antigravity-cli
   ];
 }
