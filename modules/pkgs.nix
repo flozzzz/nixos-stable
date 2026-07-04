@@ -54,7 +54,7 @@
     sl
     nyancat
     tty-clock
-
+    
     # Desktop / Wayland / shell
     kitty
     rofi
