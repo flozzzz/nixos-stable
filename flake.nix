@@ -25,10 +25,13 @@
     url = "github:nix-community/home-manager/release-26.05";
     inputs.nixpkgs.follows = "nixpkgs";
   };
+  prismlauncher = {
+    url = "github:Diegiwg/PrismLauncher-Cracked";
+  };
 
 };
  
-  outputs = { self, nixpkgs, nixpkgs-unstable, quickshell, home-manager, caelestia-shell, spicetify-nix, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, quickshell, home-manager, caelestia-shell, spicetify-nix, prismlauncher, ... }@inputs:
   let
     system = "x86_64-linux";
     spicePkgs = spicetify-nix.legacyPackages.${system};
@@ -57,6 +60,7 @@
           environment.systemPackages = [
             caelestia-shell.packages.${system}.with-cli
 	    qsPkg
+	    prismlauncher.packages.${pkgs.system}.prismlauncher
           ];
 
           imports = [

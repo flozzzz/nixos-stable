@@ -45,6 +45,7 @@
     neovim
     vim
     lazarus
+    openjdk25
 
     # Terminal / TUI / shell tools
     btop

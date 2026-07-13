@@ -28,10 +28,18 @@ networking.hostName = "nixos"; # Define your hostname.
    };
   
 
-  nix.settings.sandbox = true;
   services.udisks2.enable = true;
   security.polkit.enable = true;
   services.gvfs.enable = true;
+
+#for prismlauncher
+  nix.settings = {
+    trusted-substituters = [ "https://prismlauncher.cachix.org" ];
+
+    trusted-public-keys = [
+      "prismlauncher.cachix.org-1:9/n/FGyABA2jLUVfY+DEp4hKds/rwO+SCOtbOkDzd+c="
+    ];
+  };
 
   #on flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
