@@ -78,6 +78,7 @@
     kdePackages.gwenview
     scanmem
     krita
+    obsidian    
 
     # Wine / Windows compatibility
     wineWow64Packages.stable

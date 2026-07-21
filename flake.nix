@@ -60,7 +60,7 @@
           environment.systemPackages = [
             caelestia-shell.packages.${system}.with-cli
 	    qsPkg
-	    prismlauncher.packages.${pkgs.system}.prismlauncher
+	    prismlauncher.packages.${system}.prismlauncher
           ];
 
           imports = [
