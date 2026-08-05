@@ -46,7 +46,7 @@
     vim
     lazarus
     openjdk25
-
+    openjdk21
     # Terminal / TUI / shell tools
     btop
     fastfetch
