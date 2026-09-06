@@ -79,6 +79,8 @@
     scanmem
     krita
     obsidian    
+    bottles
+    inkscape    
 
     # Wine / Windows compatibility
     wineWow64Packages.stable
