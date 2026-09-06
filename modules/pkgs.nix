@@ -58,7 +58,6 @@
     
     # Desktop / Wayland / shell
     kitty
-    hyprsunset
     rofi
     wl-clipboard
     cliphist
