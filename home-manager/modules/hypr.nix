@@ -35,7 +35,7 @@ $fileManager = dolphin
 exec-once = /run/current-system/sw/bin/polkit-gnome-authentication-agent-1
 exec-once = caelestia-shell
 exec-once = wl-paste --watch cliphist store
-
+exec-once = hyprsunset -t 9000
 
 #############################
 ### ENVIRONMENT VARIABLES ###
