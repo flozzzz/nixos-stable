@@ -30,6 +30,8 @@
     kdePackages.kio-fuse
     kdePackages.kio-extras
     unrar
+    dnsutils
+    traceroute
 
     # Device / phone / filesystem helpers
     usbmuxd
@@ -69,6 +71,7 @@
     qt6Packages.qt6ct
     
     # Media / internet / apps
+    tauon
     telegram-desktop
     libreoffice-qt
     ffmpeg-full
