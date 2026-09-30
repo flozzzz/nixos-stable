@@ -84,6 +84,7 @@
     obsidian    
     bottles
     inkscape    
+    vesktop
 
     # Wine / Windows compatibility
     wineWow64Packages.stable

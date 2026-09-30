@@ -5,6 +5,11 @@
   nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
   nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+  tg-ws-proxy = {
+     url = "github:dmfrpro/tg-ws-proxy-flake";
+     inputs.nixpkgs.follows = "nixpkgs";
+  };  
+
   caelestia-shell = {
     url = "github:caelestia-dots/shell";
     inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -31,7 +36,7 @@
 
 };
  
-  outputs = { self, nixpkgs, nixpkgs-unstable, quickshell, home-manager, caelestia-shell, spicetify-nix, prismlauncher, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, quickshell, home-manager, caelestia-shell, spicetify-nix, prismlauncher, tg-ws-proxy, ... }@inputs:
   let
     system = "x86_64-linux";
     spicePkgs = spicetify-nix.legacyPackages.${system};
@@ -47,7 +52,7 @@
        modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
-
+        tg-ws-proxy.nixosModules.tg-ws-proxy
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

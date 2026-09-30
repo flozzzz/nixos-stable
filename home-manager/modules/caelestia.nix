@@ -13,6 +13,10 @@
             "layers": 0.4950014346828047
         }
     },
+    "border": {
+        "rounding": 0,
+        "thickness": 0
+    },
     "background": {
         "desktopClock": {
             "background": {
@@ -24,38 +28,69 @@
     },
     "bar": {
         "activeWindow": {
-            "compact": true
+            "compact": true,
+            "inverted": false,
+            "showOnHover": true
         },
         "clock": {
-            "background": true,
-            "showDate": false,
             "showIcon": false
         },
-        "persistent": true,
-        "status": {
-            "showAudio": false,
-            "showKbLayout": true,
-            "showLockStatus": false,
-            "showMicrophone": true
-        },
+        "statusIcons": [
+            {
+                "enabled": true,
+                "id": "network"
+            },
+            {
+                "enabled": true,
+                "id": "bluetooth"
+            },
+            {
+                "enabled": true,
+                "id": "kbLayout"
+            },
+            {
+                "enabled": false,
+                "id": "microphone"
+            },
+            {
+                "enabled": false,
+                "id": "lockStatus"
+            },
+            {
+                "enabled": false,
+                "id": "audio"
+            },
+            {
+                "enabled": true,
+                "id": "battery"
+            }
+        ],
         "tray": {
             "background": true,
             "compact": true,
-            "recolour": true
-        },
-        "workspaces": {
-            "activeIndicator": true,
-            "occupiedBg": false
+            "recolour": false
         }
     },
-    "border": {
-        "rounding": 0,
-        "thickness": 0
-    },
     "dashboard": {
-        "showWeather": false
+        "enabled": true,
+        "performance": {
+            "showBattery": true,
+            "showCpu": true,
+            "showGpu": true
+        }
+    },
+    "general": {
+        "apps": {
+            "explorer": [
+                "dolphin"
+            ],
+            "terminal": [
+                "kitty"
+            ]
+        }
     },
     "services": {
+        "clockFormat": "TwentyFourHour",
         "maxVolume": 2
     },
     "utilities": {
@@ -66,9 +101,5 @@
     }
 }
 '';
-
-  # Per-monitor override from your current tree.
-  xdg.configFile."caelestia/monitors/eDP-1/shell.json".text = ''
-{ }
-'';
 }
+
