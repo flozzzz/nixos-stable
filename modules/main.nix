@@ -12,5 +12,6 @@
     ./sound.nix    
     ./virt-manager.nix
     ./hardware.nix
+    ./docker.nix
   ];
 }

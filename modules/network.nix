@@ -16,6 +16,11 @@
     ];
   };
 
+  services.avahi = {
+     enable = true;
+     openFirewall = true;
+  };
+
   # vless
   programs.throne.enable = true;
   programs.throne.tunMode.enable = true;

@@ -40,6 +40,7 @@
     mtpfs
     jmtpfs
     virtiofsd
+    android-tools
 
     # Development / programming
     python3
@@ -82,7 +83,6 @@
     scanmem
     krita
     obsidian    
-    bottles
     inkscape    
     vesktop
 
